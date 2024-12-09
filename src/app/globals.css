@@ -2,36 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+
+@layer base {
   body {
     background-color: #1F2937;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-   }
-}
-@layer components{
-  .menuLink{
-    @apply cursor-pointer hover:text-[#ca0505];
+    color: #F9FAFB; /* Slightly off-white for better UX */
+    font-family: 'Inter', Arial, Helvetica, sans-serif; /* Modern font for cleaner design */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Better readability */
   }
-  .tags{
-    background-color: gray;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@layer components {
+  .menuLink {
+    @apply cursor-pointer;
+    color: #E5E7EB;
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+
+  .menuLink:hover {
+    color: #CA0505; /* Maintain brand feel */
+  }
+
+  .tags {
+    background-color: #4B5563; /* Neutral color for contrast */
     margin-right: 0.5rem;
     margin-top: 0.5rem;
-    padding: 3px 10px;
+    padding: 4px 12px; /* Slightly larger padding for better click targets */
     display: inline-block;
-    color: white;
-    font-size: 12px;
+    color: #F9FAFB; /* Consistent text color */
+    font-size: 0.875rem; /* Better readability for smaller text */
+    border-radius: 4px; /* Adds modern look */
+    font-weight: 500; /* Slight boldness for visibility */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s ease-in-out; /* Hover animation */
   }
-  .tags:last-child{
+
+  .tags:last-child {
     margin-right: 0;
   }
+
   .tags:nth-child(2) {
-    background-color: darkblue;
+    background-color: #1E40AF; /* Enhanced dark blue */
   }
+
   .tags:nth-child(3) {
-    background-color: rgb(6, 250, 250);
+    background-color: #06F5F5; /* Vibrant cyan */
+    color: #1F2937; /* Better contrast */
   }
+
   .tags:nth-child(4) {
-    background-color: rebeccapurple;
+    background-color: #7B2CBF; /* Deep purple for elegance */
+  }
+
+  .tags:hover {
+    transform: translateY(-2px); /* Subtle lift on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
   }
 }
